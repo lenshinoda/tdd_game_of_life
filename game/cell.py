@@ -13,3 +13,6 @@ class Cell:
         if not state in [0, 1]:
             raise Exception("Invalid state")
         self._state = state
+    
+    def update_state(self, neighbors):
+        self.state = 0
