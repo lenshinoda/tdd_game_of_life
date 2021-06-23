@@ -18,4 +18,7 @@ class Cell:
         if neighbors in [2, 3] and self.state == 1:
             self.state = 1
             return
+        if neighbors == 3 and self.state == 0:
+            self.state = 1
+            return
         self.state = 0
