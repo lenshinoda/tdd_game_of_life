@@ -29,3 +29,14 @@ def test_a_live_cell_should_die_if_less_than_two_cells_are_alive():
 
     assert live_cell_with_1_neighbor.state == 0
     assert live_cell_with_2_neighbor.state == 0
+
+# Any live cell with two or three live neighbors lives on to the next generation.
+def test_a_live_cell_should_keep_alive_if_2_or_3_live_neighbors():
+    live_cell_with_2_neighbor = Cell(1)
+    live_cell_with_3_neighbor = Cell(1)
+
+    live_cell_with_2_neighbor.update_state(2)
+    live_cell_with_3_neighbor.update_state(3)
+
+    assert live_cell_with_2_neighbor.state == 1
+    assert live_cell_with_3_neighbor.state == 1
