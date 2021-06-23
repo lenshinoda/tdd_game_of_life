@@ -40,3 +40,11 @@ def test_a_live_cell_should_keep_alive_if_2_or_3_live_neighbors():
 
     assert live_cell_with_2_neighbor.state == 1
     assert live_cell_with_3_neighbor.state == 1
+
+# Any live cell with more than three live neighbors dies, as if by overpopulation.
+def test_a_live_cell_should_die_if_more_than_3_live_neighbors():
+    live_cell_with_4_neighbor = Cell(1)
+
+    live_cell_with_4_neighbor.update_state(4)
+
+    assert live_cell_with_4_neighbor.state == 0
