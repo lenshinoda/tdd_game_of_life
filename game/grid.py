@@ -2,4 +2,6 @@ from .cell import Cell
 
 class Grid:
 
-    pass
+    def __init__(self, seed):
+        self.seed = seed
+
