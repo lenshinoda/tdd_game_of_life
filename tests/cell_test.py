@@ -48,3 +48,11 @@ def test_a_live_cell_should_die_if_more_than_3_live_neighbors():
     live_cell_with_4_neighbor.update_state(4)
 
     assert live_cell_with_4_neighbor.state == 0
+
+# Any dead cell with exactly three live neighbors becomes a live cell, as if by reproduction.
+def test_a_dead_cell_should_live_if_exactly_3_live_neighbors():
+    dead_cell_with_3_live_neighbor = Cell(0)
+
+    dead_cell_with_3_live_neighbor.update_state(3)
+
+    assert dead_cell_with_3_live_neighbor.state == 1
