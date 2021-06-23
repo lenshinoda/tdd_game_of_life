@@ -20,3 +20,15 @@ class Grid:
                 neighbors += is_neighbor_alive
 
         return neighbors
+
+    def calculate_next_gen(self):
+        nex_gen = []
+        for i in range(len(self.seed)):
+            nex_gen_y = []
+            for j in range(len(self.seed[0])):
+                cell = Cell(self.seed[i][j])
+                neighbors = self.calculate_neighbors([j, i])
+                cell.update_state(neighbors)
+                nex_gen_y.append(cell.state)
+            nex_gen.append(nex_gen_y)
+        self.seed = nex_gen
