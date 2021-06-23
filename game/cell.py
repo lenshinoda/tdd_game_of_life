@@ -15,7 +15,7 @@ class Cell:
         self._state = state
     
     def update_state(self, neighbors):
-        if neighbors >= 2:
+        if neighbors in [2, 3] and self.state == 1:
             self.state = 1
             return
         self.state = 0
