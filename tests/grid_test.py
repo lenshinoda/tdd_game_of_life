@@ -28,3 +28,10 @@ def test_a_grid_should_be_created_with_a_seed():
     grid = Grid(seed)
 
     assert grid.seed == seed 
+
+def test_given_a_cell_location_the_neighbors_should_be_calculated():
+    grid = Grid(seed)
+
+    neighbors = grid.calculate_neighbors([8, 5])
+
+    assert neighbors == 3
